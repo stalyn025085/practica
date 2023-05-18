@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Chat final</title>
+
+    <style>
+        .avatar{
+            width: 60px;
+            border-radius: 30px;
+        }
+
+        .msm1{
+            background-color: rgb(54, 201, 54);
+            color: white;
+            padding: 13px;
+            border-radius: 25px;
+            border-bottom-left-radius: 0px;
+            display: inline-block;
+            margin-left: 10px;
+        }
+
+        .usuario1{
+            display: flex;
+        }
+
+        .avatar2{
+            width: 60px;
+            border-radius: 30px;
+        }
+
+        .msm2{
+            background-color: rgb(41, 196, 196);
+            color: white;
+            padding: 13px;
+            border-radius: 25px;
+            border-bottom-left-radius: 0px;
+            display: inline-block;
+            margin-left: 10px;
+        }
+
+        .usuario2{
+            display: flex;
+            margin-left: 25%;
+        }
+    </style>
+
+
+
+</head>
+
+
+<body>
+
+
+ <div id="contenedor">
+
+ </div>
+
+   <div style="display: flex;">
+      <div>
+         <input type="text"  id="mensaje1">
+         <button  onclick="msmUsuario1()">Enviar mensaje</button>
+      </div>
+
+      <div>
+        <input type="text"  id="mensaje2">
+        <button onclick="msmUsuario2()">Enviar mensaje</button>
+      </div>
+   </div>
+
+
+ 
+   <script>
+       var caja = document.getElementById('contenedor')
+       
+       console.log(caja.outerHTML)
+
+       function msmUsuario1(){
+            var contenidoActual = caja.outerHTML
+            var texto= document.getElementById('mensaje1').value
+            
+
+            caja.innerHTML=`${contenidoActual} <div class="usuario1" >
+
+                <div>
+                     <img  class="avatar" src="https://us.123rf.com/450wm/drawkman/drawkman2005/drawkman200500646/147632234-monstruo-de-dibujos-animados-feliz-cara-de-c%C3%ADclope-de-un-ojo-vector-monstruo-de-halloween-avatar.jpg?ver=6" alt="">
+                </div>  
+             
+                <div class="msm1">
+                     <span>${texto}</span><br>
+                     <span>09:25</span>
+                </div>
+             
+            </div>`
+            document.getElementById('mensaje1').value=''
+       }
+
+       function msmUsuario2(){
+            var contenidoActual = caja.outerHTML
+            var texto= document.getElementById('mensaje2').value
+
+            caja.innerHTML=`${contenidoActual} <div class="usuario2">
+            <div class="avatar2">
+                <img  class="avatar" src="https://thumbs.dreamstime.com/b/rosto-de-monstro-engra%C3%A7ado-vetor-halloween-avatar-da-pra%C3%A7a-do-cartoon-bonito-yeti-ou-cara-p%C3%A1lida-160464079.jpg" alt="">
+            </div>
+        
+            <div class="msm2">
+                <span>${texto} </span><br>
+                <span>09:27</span>
+            </div>
+         
+        </div>`
+        document.getElementById('mensaje2').value=''
+       }
+
+
+       
+   </script>
+   
+
+</body>
+</html>
